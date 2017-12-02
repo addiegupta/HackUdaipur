@@ -11,7 +11,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.android.hackudaipur.R;
 import com.example.android.hackudaipur.adapter.UserAdapter;
-import com.example.android.hackudaipur.data.ListColumns;
+import com.example.android.hackudaipur.data.UserColumns;
 import com.example.android.hackudaipur.model.User;
 
 import java.util.ArrayList;
@@ -46,8 +46,8 @@ public class SelectUserActivity extends AppCompatActivity implements UserAdapter
 
                 cursor.moveToFirst();
                 while (!cursor.isAfterLast()) {
-                    String userName = cursor.getString(cursor.getColumnIndexOrThrow(ListColumns.NAME));
-                    int id = cursor.getInt(cursor.getColumnIndexOrThrow(ListColumns._ID));
+                    String userName = cursor.getString(cursor.getColumnIndexOrThrow(UserColumns.NAME));
+                    int id = cursor.getInt(cursor.getColumnIndexOrThrow(UserColumns._ID));
 
                     mUsersList.add(new User(userName,id));
 

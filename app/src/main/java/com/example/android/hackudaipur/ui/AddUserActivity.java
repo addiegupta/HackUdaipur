@@ -12,11 +12,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.android.hackudaipur.R;
+import com.example.android.hackudaipur.data.UserColumns;
+import com.example.android.hackudaipur.data.UserProvider;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.example.android.hackudaipur.data.UserProvider.AUTHORITY;
 
 
 public class AddUserActivity extends AppCompatActivity {
@@ -30,11 +30,15 @@ public class AddUserActivity extends AppCompatActivity {
     RadioGroup mGenderRadioGroup;
     @BindView(R.id.btn_add_user)
     Button mAddUserButton;
+    @BindView(R.id.et_age)
+    EditText mAgeEditText;
+    @BindView(R.id.et_weight)
+    EditText mWeightEditText;
+    @BindView(R.id.et_allergy)
+    EditText mAllergiesEditText;
+    @BindView(R.id.et_aadhaar)
+    EditText mAadhaarEditText;
 
-    private static final String KEY_NAME = "name";
-    private static final String KEY_PHONE = "phone";
-    private static final String KEY_GENDER = "gender";
-    public static final Uri URI_USERS = Uri.parse("content://" + AUTHORITY + "/users");
 
 
     @Override
@@ -54,14 +58,22 @@ public class AddUserActivity extends AppCompatActivity {
 
         //TODO Create error handling
         String name = mNameEditText.getText().toString().trim();
-        long phone = Long.valueOf(mPhoneEditText.getText().toString());
+        String phone = mPhoneEditText.getText().toString();
         boolean gender = (mGenderRadioGroup.getCheckedRadioButtonId() == R.id.rb_male);
+        int age = Integer.valueOf(mAgeEditText.getText().toString().trim());
+        float weight = Float.valueOf(mWeightEditText.getText().toString().trim());
+        String allergies = mAllergiesEditText.getText().toString().trim();
+        String aadhaar = mAadhaarEditText.getText().toString().trim();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, name);
-        values.put(KEY_PHONE, phone);
-        values.put(KEY_GENDER, gender);
-        Uri insertUri = getContentResolver().insert(URI_USERS, values);
+        values.put(UserColumns.NAME, name);
+        values.put(UserColumns.PHONE, phone);
+        values.put(UserColumns.GENDER, gender);
+        values.put(UserColumns.AGE,age);
+        values.put(UserColumns.WEIGHT,weight);
+        values.put(UserColumns.ALLERGY,allergies);
+        values.put(UserColumns.AADHAAR,aadhaar);
+        Uri insertUri = getContentResolver().insert(UserProvider.Users.URI_USERS, values);
         Toast.makeText(this, name + " inserted at " + insertUri.getPath(), Toast.LENGTH_SHORT).show();
 
         PreferenceManager.getDefaultSharedPreferences(this).edit()

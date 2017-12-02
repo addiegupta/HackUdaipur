@@ -5,7 +5,8 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="phone">Phone Number</string>
-    <string name="add_user">Add New User</string>
+    <string name="add_new_user">Add New User</string>
+    <string name="add_user">Add User</string>
     <string name="SELECTED_USER_ID">selected_user</string>
     <string name="drawer_open">drawer_open</string>
     <string name="drawer_close">drawer_close</string>
@@ -20,4 +21,8 @@
     <string name="continue_to_diagnosis_message">Do you want to continue to medical diagnosis or skip it?</string>
     <string name="skip_diagnosis">Skip Diagnosis</string>
     <string name="visit_centre">Visit your nearest Diagnosis Centre to complete the procedure</string>
+    <string name="age">Age</string>
+    <string name="weight">Weight</string>
+    <string name="allergies">Allergies (if any)</string>
+    <string name="aadhaar">Aadhaar Number</string>
 </resources>

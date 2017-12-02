@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:textColorHint="@android:color/black">
+        android:textColorHint="@android:color/darker_gray">
 
         <EditText
             android:id="@+id/et_user_name"
@@ -25,23 +25,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:padding="8dp"
             android:text="@string/gender"
-            android:textColor="@android:color/black"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:textColor="@android:color/darker_gray"
             android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/radio_group_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:checkedButton="@+id/rb_male"
             android:orientation="horizontal">
@@ -71,14 +71,82 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:textColorHint="@android:color/black">
+        android:textColorHint="@android:color/darker_gray">
 
         <EditText
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone"
-            android:inputType="phone"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@android:color/black" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColorHint="@android:color/darker_gray">
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/age"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@android:color/black" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColorHint="@android:color/darker_gray">
+
+        <EditText
+            android:id="@+id/et_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weight"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textColor="@android:color/black" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColorHint="@android:color/darker_gray">
+
+        <EditText
+            android:id="@+id/et_allergy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/allergies"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:textColor="@android:color/black" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColorHint="@android:color/darker_gray">
+
+        <EditText
+            android:id="@+id/et_aadhaar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/aadhaar"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
 
@@ -88,6 +156,7 @@
         android:id="@+id/btn_add_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:layout_gravity="center_horizontal"
         android:text="@string/add_user" />
 

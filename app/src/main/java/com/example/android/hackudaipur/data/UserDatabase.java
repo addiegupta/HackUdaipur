@@ -16,7 +16,7 @@ public final class UserDatabase {
 
     public static final int VERSION = 1;
 
-    @Table(ListColumns.class)
+    @Table(UserColumns.class)
     public static final String USERS = "users";
 
     @Table(SymptomColumns.class)

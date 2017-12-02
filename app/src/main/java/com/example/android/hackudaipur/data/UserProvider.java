@@ -20,7 +20,7 @@ public class UserProvider {
         @ContentUri(
                 path = "users",
                 type = "vnd.android.cursor.dir/user",
-                defaultSort = ListColumns.NAME + " ASC")
+                defaultSort = UserColumns.NAME + " ASC")
         public static final Uri URI_USERS = Uri.parse("content://" + AUTHORITY + "/users");
 
     }

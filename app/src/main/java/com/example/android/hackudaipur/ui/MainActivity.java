@@ -25,7 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.hackudaipur.R;
-import com.example.android.hackudaipur.data.ListColumns;
+import com.example.android.hackudaipur.data.UserColumns;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 boolean userSelected = false;
                 while (!cursor.isAfterLast()) {
-                    String userName = cursor.getString(cursor.getColumnIndexOrThrow(ListColumns.NAME));
-                    int id = cursor.getInt(cursor.getColumnIndexOrThrow(ListColumns._ID));
+                    String userName = cursor.getString(cursor.getColumnIndexOrThrow(UserColumns.NAME));
+                    int id = cursor.getInt(cursor.getColumnIndexOrThrow(UserColumns._ID));
 
                     if (id == selectedUserId) {
                         userSelected = true;
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         int selectedUserId = PreferenceManager.getDefaultSharedPreferences(this)
                 .getInt(getString(R.string.SELECTED_USER_ID), 0);
 
-        String selection = ListColumns._ID + "=?";
+        String selection = UserColumns._ID + "=?";
         String[] selectionArgs = {String.valueOf(selectedUserId)};
 
         getContentResolver().delete(URI_USERS, selection, selectionArgs);

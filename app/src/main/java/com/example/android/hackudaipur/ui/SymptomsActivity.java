@@ -115,6 +115,7 @@ public class SymptomsActivity extends AppCompatActivity {
 
     private void continueWithDiagnosis(boolean diagnose) {
         finish();
+
         //TODO Put symptoms data
 
         if (diagnose) {
