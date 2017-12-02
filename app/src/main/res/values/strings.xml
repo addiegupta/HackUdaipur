@@ -7,15 +7,15 @@
     <string name="phone">Phone Number</string>
     <string name="add_new_user">Add New User</string>
     <string name="add_user">Add User</string>
-    <string name="SELECTED_USER_ID">selected_user</string>
-    <string name="drawer_open">drawer_open</string>
-    <string name="drawer_close">drawer_close</string>
+    <string name="SELECTED_USER_ID" translatable="false">selected_user</string>
+    <string name="drawer_open" translatable="false">drawer_open</string>
+    <string name="drawer_close" translatable="false">drawer_close</string>
     <string name="delete_user">Delete Current User</string>
     <string name="delete_confirm_message">Are you sure you want to delete this user?</string>
     <string name="user_will_be_deleted_permanently">User will be deleted permanently. Data cannot be recovered</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
-    <string name="SELECTED_USER_NAME">selected_user_name</string>
+    <string name="SELECTED_USER_NAME" translatable="false">selected_user_name</string>
     <string name="conti">Continue</string>
     <string name="continue_to_diagnosis">Continue to Diagnosis</string>
     <string name="continue_to_diagnosis_message">Do you want to continue to medical diagnosis or skip it?</string>

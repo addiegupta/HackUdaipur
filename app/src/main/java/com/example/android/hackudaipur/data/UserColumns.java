@@ -5,7 +5,6 @@ import net.simonvt.schematic.annotation.DataType;
 import net.simonvt.schematic.annotation.PrimaryKey;
 
 import static net.simonvt.schematic.annotation.DataType.Type.INTEGER;
-import static net.simonvt.schematic.annotation.DataType.Type.REAL;
 import static net.simonvt.schematic.annotation.DataType.Type.TEXT;
 
 public interface UserColumns {
@@ -26,7 +25,7 @@ public interface UserColumns {
     @DataType(INTEGER)
     String AGE = "age";
 
-    @DataType(REAL)
+    @DataType(INTEGER)
     String WEIGHT = "weight";
 
     @DataType(TEXT)

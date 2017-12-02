@@ -33,6 +33,7 @@ dependencies {
     compile 'net.simonvt.schematic:schematic:0.7.0'
     compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.volley:volley:1.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     annotationProcessor 'net.simonvt.schematic:schematic-compiler:0.7.0'
 }

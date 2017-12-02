@@ -5,15 +5,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.example.android.hackudaipur.R;
 import com.example.android.hackudaipur.data.UserColumns;
 import com.example.android.hackudaipur.data.UserProvider;
+import com.example.android.hackudaipur.utils.QueryUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,6 +43,7 @@ public class AddUserActivity extends AppCompatActivity {
     @BindView(R.id.et_aadhaar)
     EditText mAadhaarEditText;
 
+    private static final String BASE_URL = "https://finalapo.herokuapp.com/";
 
 
     @Override
@@ -61,7 +66,7 @@ public class AddUserActivity extends AppCompatActivity {
         String phone = mPhoneEditText.getText().toString();
         boolean gender = (mGenderRadioGroup.getCheckedRadioButtonId() == R.id.rb_male);
         int age = Integer.valueOf(mAgeEditText.getText().toString().trim());
-        float weight = Float.valueOf(mWeightEditText.getText().toString().trim());
+        int weight = Integer.valueOf(mWeightEditText.getText().toString().trim());
         String allergies = mAllergiesEditText.getText().toString().trim();
         String aadhaar = mAadhaarEditText.getText().toString().trim();
 
@@ -78,6 +83,18 @@ public class AddUserActivity extends AppCompatActivity {
 
         PreferenceManager.getDefaultSharedPreferences(this).edit()
                 .putInt(getString(R.string.SELECTED_USER_ID), Integer.valueOf(insertUri.getLastPathSegment())).apply();
+
+        String url = BASE_URL +
+                "patients/new?name=" + name
+                + "&phonenumber=" + phone
+                + "&gender=" + gender
+                + "&age=" + age
+                + "&weight=" + weight
+                + "&allergy=" + allergies
+                + "&aadharnumber=" + aadhaar;
+        Log.d(AddUserActivity.class.getSimpleName(),url);
+        RequestQueue queue = Volley.newRequestQueue(this);
+        QueryUtils.addVolleyHttpRequest(queue, false, url);
 
         finish();
 

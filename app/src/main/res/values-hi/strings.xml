@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hack Udaipur</string>
+    <string name="aadhaar">आधार संख्या</string>
+    <string name="add_new_user">नया उपयोगकर्ता जोड़ें</string>
+    <string name="add_user">उपयोगकर्ता जोड़ें</string>
+    <string name="age">उम्र</string>
+    <string name="allergies">एलर्जी (यदि कोई हो)</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="conti">आगे बढ़ें</string>
+    <string name="continue_to_diagnosis">निदान के लिए आगे बढ़ें</string>
+    <string name="continue_to_diagnosis_message">क्या आप चिकित्सा निदान जारी रखना चाहते हैं या इसे छोड़ना चाहते हैं?</string>
+    <string name="delete">हटा दें</string>
+    <string name="delete_confirm_message">क्या आप वाकई इस उपयोगकर्ता को हटाना चाहते हैं?</string>
+    <string name="delete_user">वर्तमान उपयोगकर्ता हटाएं</string>
+    <string name="female">महिला</string>
+    <string name="gender">लिंग</string>
+    <string name="male">पुरुष</string>
+    <string name="name">नाम</string>
+    <string name="phone">फ़ोन नंबर</string>
+    <string name="skip_diagnosis">निदान को छोड़ दें</string>
+    <string name="user_will_be_deleted_permanently">उपयोगकर्ता स्थायी रूप से हटा दिया जाएगा डेटा को पुनर्प्राप्त नहीं किया जा सकता</string>
+    <string name="visit_centre">प्रक्रिया को पूरा करने के लिए अपने निकटतम निदान केंद्र पर जाएं</string>
+    <string name="weight">वजन</string>
+</resources>
