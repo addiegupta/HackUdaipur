@@ -35,4 +35,6 @@
     <string name="sym8" translatable="false">8</string>
     <string name="in_progress">In Progress</string>
     <string name="waiting_for_diagnosis">Waiting for diagnosis...</string>
+    <string name="khama_gani">Khama Gani</string>
+    <string name="start_medical_diagnosis">Start Medical Diagnosis</string>
 </resources>
