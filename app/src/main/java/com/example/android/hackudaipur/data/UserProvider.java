@@ -31,7 +31,7 @@ public class UserProvider {
         @ContentUri(
                 path = "symptoms",
                 type = "vnd.android.cursor.dir/symptom",
-                defaultSort = SymptomColumns.NAME + " ASC")
+                defaultSort = SymptomColumns._ID + " ASC")
         public static final Uri URI_SYMPTOMS = Uri.parse("content://" + AUTHORITY + "/symptoms");
 
     }

@@ -14,4 +14,5 @@
     <string name="user_will_be_deleted_permanently">User will be deleted permanently. Data cannot be recovered</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="SELECTED_USER_NAME">selected_user_name</string>
 </resources>

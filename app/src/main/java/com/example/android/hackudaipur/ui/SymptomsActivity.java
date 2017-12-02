@@ -3,6 +3,7 @@ package com.example.android.hackudaipur.ui;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,8 @@ import static com.example.android.hackudaipur.data.UserProvider.AUTHORITY;
 public class SymptomsActivity extends AppCompatActivity {
 
     private static final Uri URI_USERS = Uri.parse("content://" + AUTHORITY + "/users");
+    public static final Uri URI_SYMPTOMS = Uri.parse("content://" + AUTHORITY + "/symptoms");
+
     @BindView(R.id.rv_symptoms)
     RecyclerView mRVSymptoms;
     @BindView(R.id.btnShow)
@@ -41,18 +44,30 @@ public class SymptomsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_symptoms);
         ButterKnife.bind(this);
 
-        mRVSymptoms.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        String selectedUserName = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.SELECTED_USER_NAME), "");
+        setTitle("Hi " + selectedUserName + "!");
 
+        mRVSymptoms.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         mSymptomsList = new ArrayList<>();
 
-        Cursor cursor = getContentResolver().query(URI_USERS, null, null, null, null);
+        /*Cursor cursor = getContentResolver().query(URI_USERS, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 String userName = cursor.getString(cursor.getColumnIndexOrThrow(ListColumns.NAME));
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow(ListColumns._ID));
 
+                mSymptomsList.add(new Symptom(userName, false));
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }*/
+        Cursor cursor = getContentResolver().query(URI_USERS, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String userName = cursor.getString(cursor.getColumnIndexOrThrow(ListColumns.NAME));
                 mSymptomsList.add(new Symptom(userName, false));
                 cursor.moveToNext();
             }
@@ -73,7 +88,7 @@ public class SymptomsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String secemp = "";
-                List<Symptom> stList = ((SymptomAdapter) mAdapter).getEmployeeList();
+                List<Symptom> stList = ((SymptomAdapter) mAdapter).getSymptomList();
 
                 for (int i = 0; i < stList.size(); i++) {
                     Symptom symptom = stList.get(i);
@@ -90,4 +105,26 @@ public class SymptomsActivity extends AppCompatActivity {
             }
         });
     }
+
+//    @Override
+//    public void onClick(Symptom selectedSymptom) {
+//
+////        selectedSymptom.setSelected();
+////
+////        viewHolder.chkSelected.setTag(symptomList.get(position));
+////        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+////            public void onClick(View v) {
+////                CheckBox cb = (CheckBox) v;
+////                Symptom symptom = (Symptom) cb.getTag();
+////
+////                symptom.setSelected(cb.isChecked());
+////                symptomList.get(pos).setSelected(cb.isChecked());
+////
+////                Toast.makeText(
+////                        v.getContext(),
+////                        "Selected Symptoms: " + cb.getText() + " is "
+////                                + cb.isChecked(), Toast.LENGTH_LONG).show();
+////            }
+////        });
+//    }
 }

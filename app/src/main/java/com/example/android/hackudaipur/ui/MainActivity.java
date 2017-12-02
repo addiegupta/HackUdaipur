@@ -100,10 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        String filename = "SampleFile.txt";
-        String filepath = "MyFileStorage";
+        String filename = "outside.txt";
         File myExternalFile;
-        myExternalFile = new File(getExternalFilesDir(filepath), filename);
+        myExternalFile = new File(getExternalFilesDir(null), filename);
         String myData = "";
 
         try {
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         mFABAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SymptomsActivity.class));
+                startActivity(new Intent(MainActivity.this, SelectUserActivity.class));
             }
         });
     }

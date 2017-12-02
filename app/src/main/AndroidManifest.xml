@@ -26,7 +26,9 @@
             android:name=".data.generated.UserProvider"
             android:authorities="${applicationId}"
             android:exported="false" />
-        <activity android:name=".ui.SymptomsActivity"></activity>
+
+        <activity android:name=".ui.SymptomsActivity" />
+        <activity android:name=".ui.SelectUserActivity"></activity>
     </application>
 
 </manifest>

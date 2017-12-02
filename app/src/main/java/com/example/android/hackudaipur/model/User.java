@@ -4,9 +4,14 @@ package com.example.android.hackudaipur.model;
 public class User {
 
     private String mName;
-    private boolean mGender;
-    private long mPhone;
+//    private boolean mGender;
+//    private long mPhone;
     private int mId;
+
+    public User(String mName, int mId) {
+        this.mName = mName;
+        this.mId = mId;
+    }
 
     public int getmId() {
         return mId;
@@ -24,19 +29,19 @@ public class User {
         this.mName = mName;
     }
 
-    public boolean isMale() {
-        return mGender;
-    }
-
-    public void setGender(boolean mGender) {
-        this.mGender = mGender;
-    }
-
-    public long getPhone() {
-        return mPhone;
-    }
-
-    public void setPhone(long mPhone) {
-        this.mPhone = mPhone;
-    }
+//    public boolean isMale() {
+//        return mGender;
+//    }
+//
+//    public void setGender(boolean mGender) {
+//        this.mGender = mGender;
+//    }
+//
+//    public long getPhone() {
+//        return mPhone;
+//    }
+//
+//    public void setPhone(long mPhone) {
+//        this.mPhone = mPhone;
+//    }
 }

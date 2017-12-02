@@ -6,17 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.hackudaipur.R;
 import com.example.android.hackudaipur.model.Symptom;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class SymptomAdapter extends
         RecyclerView.Adapter<SymptomAdapter.ViewHolder> {
     private List<Symptom> symptomList;
+
     public SymptomAdapter(List<Symptom> symptoms) {
         this.symptomList = symptoms;
     }
@@ -32,43 +35,56 @@ public class SymptomAdapter extends
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         final int pos = position;
         Symptom symptom = symptomList.get(position);
-        viewHolder.tvName.setText(symptom.getSymptomName());
-        viewHolder.chkSelected.setChecked(symptom.isSelected());
-        viewHolder.chkSelected.setTag(symptomList.get(position));
-        viewHolder.chkSelected.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                CheckBox cb = (CheckBox) v;
-                Symptom symptom = (Symptom) cb.getTag();
-
-                symptom.setSelected(cb.isChecked());
-                symptomList.get(pos).setSelected(cb.isChecked());
-
-                Toast.makeText(
-                        v.getContext(),
-                        "Selected Symptoms: " + cb.getText() + " is "
-                                + cb.isChecked(), Toast.LENGTH_LONG).show();
-            }
-        });
+        viewHolder.mTVSymptomName.setText(symptom.getSymptomName());
+        viewHolder.mSymptomCheckbox.setChecked(symptom.isSelected());
+//        viewHolder.chkSelected.setTag(symptomList.get(position));
+//        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                CheckBox cb = (CheckBox) v;
+//                Symptom symptom = (Symptom) cb.getTag();
+//
+//                symptom.setSelected(cb.isChecked());
+//                symptomList.get(pos).setSelected(cb.isChecked());
+//
+//                Toast.makeText(
+//                        v.getContext(),
+//                        "Selected Symptoms: " + cb.getText() + " is "
+//                                + cb.isChecked(), Toast.LENGTH_LONG).show();
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return symptomList.size();
+        return symptomList == null ? 0 : symptomList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView tvName;
-        public CheckBox chkSelected;
+    public class ViewHolder extends RecyclerView.ViewHolder implements
+    View.OnClickListener{
+
+        @BindView(R.id.tv_symptom_name)
+        TextView mTVSymptomName;
+        @BindView(R.id.checkBox)
+        CheckBox mSymptomCheckbox;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
+            ButterKnife.bind(this,itemLayoutView);
+            itemLayoutView.setOnClickListener(this);
 
-            tvName = (TextView) itemLayoutView.findViewById(R.id.tv_symptom_name);
-            chkSelected = (CheckBox) itemLayoutView.findViewById(R.id.checkBox);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int adapterPosition = getAdapterPosition();
+            Symptom symptom = symptomList.get(adapterPosition);
+            symptom.setSelected(!symptom.isSelected());
+            mSymptomCheckbox.setChecked(symptom.isSelected());
         }
     }
-    public List<Symptom> getEmployeeList() {
+
+    public List<Symptom> getSymptomList() {
         return symptomList;
     }
 }
