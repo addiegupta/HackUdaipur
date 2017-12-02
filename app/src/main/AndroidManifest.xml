@@ -28,7 +28,9 @@
             android:exported="false" />
 
         <activity android:name=".ui.SymptomsActivity" />
-        <activity android:name=".ui.SelectUserActivity"></activity>
+        <activity android:name=".ui.SelectUserActivity" />
+        <activity android:name=".ui.DiagnosisActivity" />
+        <activity android:name=".ui.PostDiagnosisActivity"></activity>
     </application>
 
 </manifest>

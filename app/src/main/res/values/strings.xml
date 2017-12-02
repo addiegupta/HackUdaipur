@@ -15,4 +15,9 @@
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="SELECTED_USER_NAME">selected_user_name</string>
+    <string name="conti">Continue</string>
+    <string name="continue_to_diagnosis">Continue to Diagnosis</string>
+    <string name="continue_to_diagnosis_message">Do you want to continue to medical diagnosis or skip it?</string>
+    <string name="skip_diagnosis">Skip Diagnosis</string>
+    <string name="visit_centre">Visit your nearest Diagnosis Centre to complete the procedure</string>
 </resources>
