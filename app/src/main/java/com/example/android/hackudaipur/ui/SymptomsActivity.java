@@ -47,7 +47,7 @@ public class SymptomsActivity extends AppCompatActivity {
 
 
         String selectedUserName = getDefaultSharedPreferences(this).getString(getString(R.string.SELECTED_USER_NAME), "");
-        setTitle("Hi " + selectedUserName + "!");
+        setTitle(selectedUserName);
 
         mRVSymptoms.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 

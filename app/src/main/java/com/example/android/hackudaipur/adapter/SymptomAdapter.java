@@ -41,15 +41,13 @@ public class SymptomAdapter extends
         viewHolder.mSymptomCheckbox.setTag(symptomList.get(position));
         viewHolder.mSymptomCheckbox.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 CheckBox cb = (CheckBox) v;
                 Symptom symptom = (Symptom) cb.getTag();
-
                 symptom.setSelected(cb.isChecked());
                 symptomList.get(pos).setSelected(cb.isChecked());
             }
         });
-
-
     }
 
     @Override
@@ -68,10 +66,7 @@ public class SymptomAdapter extends
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             ButterKnife.bind(this, itemLayoutView);
-
-
         }
-
     }
 
     public List<Symptom> getSymptomList() {

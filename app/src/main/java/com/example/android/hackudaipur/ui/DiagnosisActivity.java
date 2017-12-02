@@ -32,6 +32,7 @@ public class DiagnosisActivity extends AppCompatActivity {
         });
     }
 
+    // To be improved when more time is available at hand
     private void handleDiagnosis(){
         final ProgressDialog dialog = new ProgressDialog(this);
         dialog.setTitle(R.string.in_progress);

@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -79,7 +78,6 @@ public class AddUserActivity extends AppCompatActivity {
         values.put(UserColumns.ALLERGY,allergies);
         values.put(UserColumns.AADHAAR,aadhaar);
         Uri insertUri = getContentResolver().insert(UserProvider.Users.URI_USERS, values);
-        Toast.makeText(this, name + " inserted at " + insertUri.getPath(), Toast.LENGTH_SHORT).show();
 
         PreferenceManager.getDefaultSharedPreferences(this).edit()
                 .putInt(getString(R.string.SELECTED_USER_ID), Integer.valueOf(insertUri.getLastPathSegment())).apply();
@@ -97,8 +95,5 @@ public class AddUserActivity extends AppCompatActivity {
         QueryUtils.addVolleyHttpRequest(queue, false, url);
 
         finish();
-
     }
-
-
 }
