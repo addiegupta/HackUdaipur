@@ -37,21 +37,19 @@ public class SymptomAdapter extends
         Symptom symptom = symptomList.get(position);
         viewHolder.mTVSymptomName.setText(symptom.getSymptomName());
         viewHolder.mSymptomCheckbox.setChecked(symptom.isSelected());
-//        viewHolder.chkSelected.setTag(symptomList.get(position));
-//        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                CheckBox cb = (CheckBox) v;
-//                Symptom symptom = (Symptom) cb.getTag();
-//
-//                symptom.setSelected(cb.isChecked());
-//                symptomList.get(pos).setSelected(cb.isChecked());
-//
-//                Toast.makeText(
-//                        v.getContext(),
-//                        "Selected Symptoms: " + cb.getText() + " is "
-//                                + cb.isChecked(), Toast.LENGTH_LONG).show();
-//            }
-//        });
+
+        viewHolder.mSymptomCheckbox.setTag(symptomList.get(position));
+        viewHolder.mSymptomCheckbox.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                CheckBox cb = (CheckBox) v;
+                Symptom symptom = (Symptom) cb.getTag();
+
+                symptom.setSelected(cb.isChecked());
+                symptomList.get(pos).setSelected(cb.isChecked());
+            }
+        });
+
+
     }
 
     @Override
@@ -60,8 +58,7 @@ public class SymptomAdapter extends
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements
-    View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.tv_symptom_name)
         TextView mTVSymptomName;
@@ -70,18 +67,11 @@ public class SymptomAdapter extends
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
-            ButterKnife.bind(this,itemLayoutView);
-            itemLayoutView.setOnClickListener(this);
+            ButterKnife.bind(this, itemLayoutView);
+
 
         }
 
-        @Override
-        public void onClick(View v) {
-            int adapterPosition = getAdapterPosition();
-            Symptom symptom = symptomList.get(adapterPosition);
-            symptom.setSelected(!symptom.isSelected());
-            mSymptomCheckbox.setChecked(symptom.isSelected());
-        }
     }
 
     public List<Symptom> getSymptomList() {

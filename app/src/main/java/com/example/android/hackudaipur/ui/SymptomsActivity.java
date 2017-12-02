@@ -86,16 +86,16 @@ public class SymptomsActivity extends AppCompatActivity {
                 SharedPreferences prefs = PreferenceManager.
                         getDefaultSharedPreferences(SymptomsActivity.this);
                 prefs.edit()
-                        .putInt(getString(R.string.sym1), booleanToInt(mSymptomsList.get(0).isSelected()))
-                        .putInt(getString(R.string.sym2), booleanToInt(mSymptomsList.get(1).isSelected()))
-                        .putInt(getString(R.string.sym3), booleanToInt(mSymptomsList.get(2).isSelected()))
-                        .putInt(getString(R.string.sym4), booleanToInt(mSymptomsList.get(3).isSelected()))
-                        .putInt(getString(R.string.sym5), booleanToInt(mSymptomsList.get(4).isSelected()))
-                        .putInt(getString(R.string.sym6), booleanToInt(mSymptomsList.get(5).isSelected()))
-                        .putInt(getString(R.string.sym7), booleanToInt(mSymptomsList.get(6).isSelected()))
-                        .putInt(getString(R.string.sym8), booleanToInt(mSymptomsList.get(7).isSelected())).apply();
+                        .putInt(getString(R.string.sym1), booleanToInt(mAdapter.getSymptomList().get(0).isSelected()))
+                        .putInt(getString(R.string.sym2), booleanToInt(mAdapter.getSymptomList().get(1).isSelected()))
+                        .putInt(getString(R.string.sym3), booleanToInt(mAdapter.getSymptomList().get(2).isSelected()))
+                        .putInt(getString(R.string.sym4), booleanToInt(mAdapter.getSymptomList().get(3).isSelected()))
+                        .putInt(getString(R.string.sym5), booleanToInt(mAdapter.getSymptomList().get(4).isSelected()))
+                        .putInt(getString(R.string.sym6), booleanToInt(mAdapter.getSymptomList().get(5).isSelected()))
+                        .putInt(getString(R.string.sym7), booleanToInt(mAdapter.getSymptomList().get(6).isSelected()))
+                        .putInt(getString(R.string.sym8), booleanToInt(mAdapter.getSymptomList().get(7).isSelected())).apply();
 
-                showDiagnosisSelectionDialogBox();
+              showDiagnosisSelectionDialogBox();
 
             }
         });
