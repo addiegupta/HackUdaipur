@@ -35,6 +35,17 @@
     <string name="sym8" translatable="false">8</string>
     <string name="in_progress">In Progress</string>
     <string name="waiting_for_diagnosis">Waiting for diagnosis...</string>
-    <string name="khama_gani">Khama Gani</string>
+    <string name="khama_gani">Khamma Ghani</string>
     <string name="start_medical_diagnosis">Start Medical Diagnosis</string>
+    <string name="create_a_user">Create A User</string>
+    <string name="select_a_user">Select a User</string>
+    <string name="no_users_available">No Users Available</string>
+    <string name="please_create_user">Please Create a User</string>
+    <string name="ok">Ok</string>
+    <string name="report">Report</string>
+    <string name="paracetamol">Take Paracetamol 500 mg thrice a day</string>
+    <string name="acidity">Take Ofloxacin and Ornidazole twice a day and Ranitidine once a day</string>
+    <string name="domperidole">Take Ofloxacin and Ornidazole twice a day and Domperidole once a day</string>
+    <string name="severe">This is a severe case. A doctor will be referred to immediately and you will be contacted.</string>
+    <string name="default_case">A doctor will see your case and you will be contacted</string>
 </resources>

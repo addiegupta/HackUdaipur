@@ -51,6 +51,7 @@ public class AddUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
         ButterKnife.bind(this);
+        setTitle(R.string.create_a_user);
         mAddUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +62,6 @@ public class AddUserActivity extends AppCompatActivity {
 
     private void insertUserInDb() {
 
-        //TODO Create error handling
         String name = mNameEditText.getText().toString().trim();
         String phone = mPhoneEditText.getText().toString();
         boolean gender = (mGenderRadioGroup.getCheckedRadioButtonId() == R.id.rb_male);

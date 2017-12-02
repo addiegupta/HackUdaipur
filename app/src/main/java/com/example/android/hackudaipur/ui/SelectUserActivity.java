@@ -1,10 +1,12 @@
 package com.example.android.hackudaipur.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,6 +40,7 @@ public class SelectUserActivity extends AppCompatActivity implements UserAdapter
         setContentView(R.layout.activity_select_user);
         ButterKnife.bind(this);
 
+        setTitle(R.string.select_a_user);
         mUsersList = new ArrayList<>();
 
         try {
@@ -59,6 +62,19 @@ public class SelectUserActivity extends AppCompatActivity implements UserAdapter
             e.printStackTrace();
         }
 
+        if (mUsersList.isEmpty()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.no_users_available)
+                    .setMessage(R.string.please_create_user)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            finish();
+                        }
+                    }).show();
+        }
         mUserAdapter = new UserAdapter(this,mUsersList,this);
 
         mRVSelectUser.setLayoutManager(new GridLayoutManager(this,2));

@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_namaste"
         android:layout_centerHorizontal="true"
-        android:textSize="22sp"
-        android:id="@+id/tv_khama_gani"
+        android:textSize="28sp"
+        android:id="@+id/tv_khamma_ghani"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:text="@string/khama_gani"/>
@@ -30,7 +30,7 @@
         android:background="@color/colorAccent"
         android:padding="16dp"
         android:layout_marginTop="32dp"
-        android:layout_below="@id/tv_khama_gani"
+        android:layout_below="@id/tv_khamma_ghani"
         android:text="@string/start_medical_diagnosis"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_main_add"

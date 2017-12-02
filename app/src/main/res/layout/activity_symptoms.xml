@@ -17,6 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="@string/conti"
-        android:background="#00796B"
+        android:background="@color/colorAccent"
         android:textColor="#fff"/>
 </LinearLayout>
