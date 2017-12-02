@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:text="@string/conti"
         android:layout_weight="1"
+        android:id="@+id/btn_finish_diagnosis"
         android:background="@color/colorAccent"
         android:layout_margin="16dp"
         />

@@ -16,4 +16,7 @@ public interface SymptomColumns {
 
     @DataType(TEXT) @NotNull
     String NAME = "name";
+
+    @DataType(TEXT) @NotNull
+    String NAME_HINDI = "name_hindi";
 }

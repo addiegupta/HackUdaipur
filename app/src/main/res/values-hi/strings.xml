@@ -23,4 +23,6 @@
     <string name="user_will_be_deleted_permanently">उपयोगकर्ता स्थायी रूप से हटा दिया जाएगा डेटा को पुनर्प्राप्त नहीं किया जा सकता</string>
     <string name="visit_centre">प्रक्रिया को पूरा करने के लिए अपने निकटतम निदान केंद्र पर जाएं</string>
     <string name="weight">वजन</string>
+    <string name="waiting_for_diagnosis">निदान की प्रतीक्षा कर रहा है ...</string>
+    <string name="in_progress">प्रगति में</string>
 </resources>

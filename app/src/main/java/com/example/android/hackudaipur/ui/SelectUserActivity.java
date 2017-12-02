@@ -72,6 +72,7 @@ public class SelectUserActivity extends AppCompatActivity implements UserAdapter
 
         PreferenceManager.getDefaultSharedPreferences(SelectUserActivity.this).edit().putInt(getString(R.string.SELECTED_USER_ID), selectedUser.getmId()).apply();
         PreferenceManager.getDefaultSharedPreferences(SelectUserActivity.this).edit().putString(getString(R.string.SELECTED_USER_NAME), selectedUser.getName()).apply();
+        finish();
         startActivity(new Intent(SelectUserActivity.this,SymptomsActivity.class));
 
     }

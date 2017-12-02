@@ -25,4 +25,14 @@
     <string name="weight">Weight</string>
     <string name="allergies">Allergies (if any)</string>
     <string name="aadhaar">Aadhaar Number</string>
+    <string name="sym1" translatable="false">1</string>
+    <string name="sym2" translatable="false">2</string>
+    <string name="sym3" translatable="false">3</string>
+    <string name="sym4" translatable="false">4</string>
+    <string name="sym5" translatable="false">5</string>
+    <string name="sym6" translatable="false">6</string>
+    <string name="sym7" translatable="false">7</string>
+    <string name="sym8" translatable="false">8</string>
+    <string name="in_progress">In Progress</string>
+    <string name="waiting_for_diagnosis">Waiting for diagnosis...</string>
 </resources>
